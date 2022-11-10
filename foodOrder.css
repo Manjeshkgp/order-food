@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 61, 61);
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* width: ; here width property is useless as is uses the width of -scrollbar */
+}
+
+body {
+    background-color: rgb(247, 197, 123);
+    overflow-x: hidden;
+}
+
+header {
+    background-color: rgb(229, 89, 30);
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+}
+
+header img {
+    margin: 0 0 0 3vw;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    margin: 0 3vw 0 0;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+.pizzaCornerBg {
+    background: url(Food-img/pizza7.jpg);
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 5vh;
+    margin: 2vh;
+    height: 90vh;
+}
+
+.foodPopup {
+    position: fixed;
+    display: grid;
+    background-color: rgb(229, 89, 30);
+    width: 52vw;
+    height: 80vh;
+    border: none;
+    border-radius: 10px;
+    place-items: center;
+    border: 2px solid pink;
+    outline: 1px solid rgb(63, 61, 61);
+    box-shadow: 0px 0px 25px 15px rgb(63, 61, 61);
+    transform: scale(0);
+}
+
+.foodPopup.show {
+    transform: scale(1);
+    transform: translate(45%, -110%);
+    transition: transform 0.3s ease-in;
+    transform-origin: bottom;
+}
+
+.foodPopup .uil-times {
+    margin-left: 48vw;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.foodPopup img {
+    width: 50vw;
+    height: 55vh;
+    object-fit: cover;
+    /* border: 2px solid rgb(63, 61, 61); */
+    border: 2px solid pink;
+    border-radius: 9px;
+}
+
+.foodPopup h3 {
+    max-width: 50vw;
+}
+
+.foodPopup p {
+    max-width: 50vw;
+    overflow-y: auto;
+}
+
+.container .filterTools {
+    display: flex;
+    gap: 0.9vh;
+    align-items: center;
+    background-color: pink;
+    padding: 5px;
+}
+
+.container .filterTools .checkBoxes {
+    cursor: pointer;
+}
+
+.container .filterTools button {
+    width: 100px;
+    height: 25px;
+    background-color: rgb(229, 89, 30);
+    border: 1px solid rgb(205, 77, 23);
+    border-radius: 10px;
+    color: pink;
+}
+
+.container .filterTools button:active {
+    background-color: pink;
+    color: black;
+}
+
+.container #showFood {
+    padding: 5vh 1vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container #showFood .boxes {
+    height: 50vh;
+    width: 19vw;
+    display: grid;
+    background-color: pink;
+    place-items: center;
+    border: none;
+    border-radius: 6px;
+    margin: 2px;
+}
+
+.boxes:hover {
+    box-shadow: 0 0 25px 1px rgb(205, 77, 23);
+}
+
+.boxes img {
+    height: 18vw;
+    width: 18vw;
+    border-radius: 5px;
+    overflow: hidden;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.boxes .foodText {
+    max-width: 18vw;
+}
+
+.boxes .selection {
+    display: flex;
+    gap: 10px;
+}
+
+.boxes .selection .selects {
+    cursor: pointer;
+}
+
+/* filter effects open code */
+.boxes.hideBox {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.showBox {
+    background-color: rgb(229, 89, 30) !important;
+    display: grid !important;
+}
+
+/* filter effects close code */
+.order {
+    display: grid;
+    place-items: center;
+}
+
+.orderBtn {
+    margin: 2vh 0 8vh 0;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(229, 89, 30);
+    border: 1px solid rgb(205, 77, 23);
+    border-radius: 10px;
+    color: pink;
+    cursor: pointer;
+}
+
+.orderBtn:active {
+    background-color: pink;
+    color: black;
+}
+
+.orderPopup {
+    width: 60rem;
+    height: 80vh;
+    background-color: pink;
+    position: fixed;
+    display: grid;
+    border: 0.3em solid rgb(205, 77, 23);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 25px 15px rgb(63, 61, 61);
+    transform: scale(0);
+}
+
+.orderPopup.show {
+    transform: scale(1);
+    transform: translate(15%, -110%);
+}
+
+.orderPopup p {
+    background-color: rgb(247, 197, 123);
+    margin: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+}
+
+.orderPopup i {
+    font-size: 1.5rem;
+    transform: translate(96%, 8%);
+    cursor: pointer;
+}
+
+.orderPopup input {
+    margin: 2rem;
+}
+
+.orderPopup button {
+    margin: 2rem;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(229, 89, 30);
+    border: 1px solid rgb(205, 77, 23);
+    border-radius: 10px;
+    color: pink;
+}
+
+.orderPopup button:active {
+    background-color: pink;
+    color: black;
+}
+
+.thankPopup {
+    position: fixed;
+    width: 20rem;
+    height: 20rem;
+    background-color: pink;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(205, 77, 23);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 250px 150px rgb(63, 61, 61);
+
+    transform: scale(0);
+}
+
+.thankPopup.show {
+    transform: scale(1);
+    transform: translate(150%, -130%);
+}
+
+.thankPopup p {
+    width: 14rem;
+}
+
+.thankPopup button {
+    width: 100px;
+    height: 25px;
+    background-color: rgb(229, 89, 30);
+    border: 1px solid rgb(205, 77, 23);
+    border-radius: 10px;
+    color: pink;
+    cursor: pointer;
+}
+
+.thankPopup button:active {
+    background-color: pink;
+    color: black;
+}
+
+@media screen and (max-width: 950px) {
+    .container #showFood .boxes {
+        width: 45vw;
+        height: 45vh;
+        margin: 0.7rem;
+    }
+    .pizzaCornerBg{
+        height: 60vh;
+    }
+    .boxes img{
+        width: 40vw;
+        height: 30vh;
+    }
+    .boxes .foodText{
+        max-width: 40vw;
+    }
+    .foodPopup{
+        width: 70vw;
+        height: 70vh;
+    }
+    .foodPopup img{
+        width: 65vw;
+    }
+    .foodPopup.show{
+        transform: translate(23%,-70%);
+    }
+    .orderPopup{
+        width: 80vw;
+        height: 70vh;
+    }
+    .orderPopup.show{
+        transform: translate(10%,-80%);
+    }
+    .thankPopup{
+        width: 50vw;
+        height: 50vw;
+    }
+    .thankPopup.show{
+        transform: translate(47%,-100%);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .pizzaCornerBg{
+        height: 50vh;
+    }
+    .filterTools{
+        height: 15vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .filterTools span{
+        width: 20vw;
+    }
+    .boxes{
+        width: 46vw!important;
+        height: 30vh!important;
+        margin: 5px!important;
+    }
+    .boxes img{
+        width: 40vw;
+        height: 20vh;
+    }
+    .foodPopup{
+        width: 90vw;
+        height: 60vh;
+    }
+    .foodPopup img{
+        width: 80vw;
+        height: 46vh;
+    }
+    .foodPopup.show{
+        transform: translate(5%,-50%);
+    }
+    .orderPopup{
+        width: 90vw;
+        height: 70vh;
+    }
+    .orderPopup.show{
+        transform: translate(5%,-60%);
+    }
+    .thankPopup{
+        width: 66vw;
+        height: 66vw;
+    }
+    .thankPopup.show{
+        transform: translate(27%,-70%);
+    }
+}

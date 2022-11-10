@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Delicious food from your comfort zone</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="FoodOrder.css">
+</head>
+<body>
+    <header>
+        <img src="" alt="logo">
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Pizza Corner</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="pizzaCornerBg">
+    </div>
+    <div class="thankPopup">
+        <h2>Thank You!</h2>
+        <p>Thankyou for submitting your details. Your order will reach you as soon as possible. Thanks!</p>
+        <button>OK</button>
+    </div>
+    <div class="orderPopup">
+        <i class="uil uil-times"></i>
+        <p class="bill"></p>
+        <input type="text" name="" id="address" placeholder="Enter Your Address" value="">
+        <input type="tel" name="" id="phnNmbr" placeholder="Enter Your Phone Number" value="">
+        <button class="buyBtn">Buy</button>
+    </div>
+    <div class="foodPopup">
+        <i class="uil uil-times cross"></i>
+        <img src="" alt="">
+        <h3 class="foodTitle"></h3>
+        <p class="foodDesc"></p>
+        <p class="price"></p>
+    </div>
+    <div class="container">
+        <div class="filterTools">
+        <span>Indian</span><input type="checkbox" class="checkBoxes" name="" id="indian" value="indian">
+        <span>American</span><input type="checkbox" class="checkBoxes" name="" id="american" value="american">
+        <span>Italian</span><input type="checkbox" class="checkBoxes" name="" id="italian" value="italian">
+        <span>Japanese</span><input type="checkbox" class="checkBoxes" name="" id="japanese" value="japanese">
+        <span>Mexican</span><input type="checkbox" class="checkBoxes" name="" id="mexican" value="mexican">
+        <span>Other</span><input type="checkbox" class="checkBoxes" name="" id="oth" value="oth">
+        <button id="filterBtn">Apply Filter</button>
+        <button id="resetBtn">Reset</button>
+        </div>
+        
+        <div id="showFood">
+
+        </div>
+        <div class="order"><button class="orderBtn">Order Now</button></div>
+    </div>
+</body>
+<script src="js/foodOrder.js"></script>
+</html>
